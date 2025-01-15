@@ -1,10 +1,10 @@
 import React from 'react';
-import AnnouncementsPage from './pages/Announcement'; // Ensure correct import path
+import AnnouncementsPage from './pages/Announcement.js';
 
 function App() {
   return (
     <div className="App">
-      <AnnouncementsPage /> {/* This should render your component */}
+      <AnnouncementsPage /> 
     </div>
   );
 }
