@@ -1,9 +1,8 @@
-// src/CalendarComponent.jsx
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import './Event Calenadar.css'; // Importing the CSS file
 
 const localizer = momentLocalizer(moment);
 
@@ -42,7 +41,7 @@ function CalendarComponent() {
 
   return (
     <div>
-         <h2>GU TECH EVENT CALENDAR </h2>
+      <h2 className="calendar-heading">GU TECH EVENT CALENDAR</h2>
 
       <Calendar
         localizer={localizer}
@@ -56,9 +55,9 @@ function CalendarComponent() {
 
       {/* Toast Message (Simple Alert for now) */}
       {isToastOpen && (
-        <div className="toast" style={{ position: 'fixed', bottom: '20px', left: '20px', backgroundColor: 'rgba(0, 0, 0, 0.7)', color: 'white', padding: '10px', borderRadius: '5px' }}>
+        <div className="toast">
           <p>{toastText}</p>
-          <button onClick={handleToastClose} style={{ color: 'white', border: 'none', background: 'none', cursor: 'pointer' }}>Close</button>
+          <button onClick={handleToastClose}>Close</button>
         </div>
       )}
     </div>

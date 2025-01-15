@@ -1,0 +1,84 @@
+/* CSS Styles for CalendarComponent */
+
+/* Change the color of the heading */
+.calendar-heading {
+    color: #991D20; /* Green color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Change color of "Today", "Back", and "Next" buttons */
+.rbc-toolbar button {
+    background-color: #991D20; /* Blue color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+/* Remove the blue background highlight when an event is selected */
+.rbc-event:focus, .rbc-event:hover {
+    outline: none; /* Remove default focus outline */
+    background-color: #991D20; /* Keep your custom event color */
+    color: white;
+}
+
+/* Hover effect for toolbar buttons */
+.rbc-toolbar button:hover {
+    background-color: #991D20; /* Darker blue on hover */
+}
+/* Change the background color of the selected day */
+.rbc-day-slot.rbc-selected {
+    background-color: #991D20 !important; /* Red color */
+    color: white; /* Optional: Change text color */
+}
+
+
+/* Change color of "Month", "Week", "Day" views */
+.rbc-toolbar .rbc-btn-group button {
+    background-color: #991D20; /* Gray color */
+    color: white;
+}
+
+/* Hover effect for view buttons */
+.rbc-toolbar .rbc-btn-group button:hover {
+    background-color: #991D20; /* Darker gray */
+}
+
+/* Active view button style */
+.rbc-toolbar .rbc-btn-group button.rbc-active {
+    background-color: #991D20; /* Green color */
+    color: white;
+}
+
+/* Change the background color of events */
+.rbc-event {
+    background-color: #991D20; /* Orange color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+/* Change the toast styles */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.toast button {
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
