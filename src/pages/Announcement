@@ -1,0 +1,14 @@
+const AnnouncementsPage = () => {
+  const announcements = [
+    { id: 1, title: 'EVENT LLC', content: 'We are seeking...', author: 'Sir Aleem', date: 'Jan 11', time: '12pm-6pm' },
+    { id: 2, title: 'Quiz Tomorrow', content: 'We are seeking...', author: 'Sir Twaha', date: 'Jan 11', time: '12pm-6pm' },
+  ];
+
+  console.log(announcements); // Check if data is available
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* JSX code to display announcements */}
+    </div>
+  );
+};
