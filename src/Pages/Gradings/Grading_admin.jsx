@@ -5,7 +5,6 @@ import "./Grading_admin.css";
 const GradingPage = () => {
   const [activeTab, setActiveTab] = useState("quizzes");
   const [program, setProgram] = useState("");
-  // const [subject, setSubject] = useState("Subject");
   const [course, setCourse] = useState("");
   const [batch, setBatch] = useState("");
   const [searchName, setSearchName] = useState("");
@@ -15,7 +14,7 @@ const GradingPage = () => {
     title: "",
     totalMarks: "",
     weightage: "",
-  }); 
+  });
 
   // Sample data
   const quizzes = [
@@ -39,9 +38,7 @@ const GradingPage = () => {
       quizNo: 1,
       marks: "8/10",
       weightage: "92%",
-    }
-    
-    
+    },
   ];
   const mids = [
     {
@@ -52,7 +49,7 @@ const GradingPage = () => {
       quizNo: 1,
       marks: "8/10",
       weightage: "92%",
-    }    
+    },
   ];
   const finals = [
     {
@@ -63,9 +60,7 @@ const GradingPage = () => {
       quizNo: 1,
       marks: "8/10",
       weightage: "92%",
-    }
-    
-    
+    },
   ];
 
   const assessmentTypes = {
@@ -78,6 +73,11 @@ const GradingPage = () => {
   const handleAddAssessment = () => {
     // Add assessment logic here
     setShowAddModal(false);
+  };
+
+  const handleUploadExcel = () => {
+    // Upload Excel logic here
+    alert("Upload Excel button clicked");
   };
 
   return (
@@ -117,7 +117,7 @@ const GradingPage = () => {
           </select>
 
           <div className="search-container">
-            <Search className="search-icon" size={18  } />
+            <Search className="search-icon" size={18} />
             <input
               type="text"
               placeholder="Search by name"
@@ -237,6 +237,13 @@ const GradingPage = () => {
           <div className="flex gap-4">
             <button className="add-button" onClick={handleAddAssessment}>
               Create
+            </button>
+            <button
+              className="add-button"
+              style={{ backgroundColor: "#4CAF50" }}
+              onClick={handleUploadExcel}
+            >
+              Upload Excel
             </button>
             <button
               className="add-button"
