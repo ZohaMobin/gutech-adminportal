@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Fees1.css";
 
 const Fees1 = () => {
@@ -35,7 +36,9 @@ const Fees1 = () => {
           <tbody>
             <tr>
               <td>0906</td>
-              <td>Huzaifa</td>
+              <td>
+                <Link to={`/student-fee-history/Ibraheem`}>Ibraheem</Link>
+              </td>
               <td>BS CS</td>
               <td>Fall-24</td>
               <td>3rd</td>
@@ -49,7 +52,9 @@ const Fees1 = () => {
             </tr>
             <tr>
               <td>0906</td>
-              <td>Huzaifa</td>
+              <td>
+                <Link to={`/student-fee-history/Moosa`}>Moosa</Link>
+              </td>
               <td>BS CS</td>
               <td>Fall-24</td>
               <td>3rd</td>
@@ -63,35 +68,9 @@ const Fees1 = () => {
             </tr>
             <tr>
               <td>0906</td>
-              <td>Huzaifa</td>
-              <td>BS CS</td>
-              <td>Fall-24</td>
-              <td>3rd</td>
-              <td>July 1, 2025</td>
               <td>
-                <span className="status-paid">● Paid</span>
+                <Link to={`/student-fee-history/Sultan`}>Sultan</Link>
               </td>
-              <td>
-                <button className="view-btn">View</button>
-              </td>
-            </tr>
-            <tr>
-              <td>0906</td>
-              <td>Huzaifa</td>
-              <td>BS CS</td>
-              <td>Fall-24</td>
-              <td>3rd</td>
-              <td>July 1, 2025</td>
-              <td>
-                <span className="status-paid">● Paid</span>
-              </td>
-              <td>
-                <button className="view-btn">View</button>
-              </td>
-            </tr>
-            <tr>
-              <td>0906</td>
-              <td>Huzaifa</td>
               <td>BS CS</td>
               <td>Fall-24</td>
               <td>3rd</td>
@@ -105,33 +84,32 @@ const Fees1 = () => {
             </tr>
           </tbody>
         </table>
-        <div className="pagination">
-  <div className="pagination-left">
-    <span>Show</span>
-    <select>
-      <option value="11">11</option>
-      <option value="20">20</option>
-      <option value="50">50</option>
-    </select>
-  </div>
-  <div className="pagination-center">
-    <span>Row</span>
-    <div className="pagination-buttons">
-      <button>&lt;</button>
-      <button className="active">1</button>
-      <button>2</button>
-      <button>3</button>
-      <span> ... </span>
-      <button>10</button>
-      <button>&gt;</button>
-    </div>
-  </div>
-</div>
 
+        <div className="pagination">
+          <div className="pagination-left">
+            <span>Show</span>
+            <select>
+              <option value="11">11</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+          <div className="pagination-center">
+            <span>Row</span>
+            <div className="pagination-buttons">
+              <button>&lt;</button>
+              <button className="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <span> ... </span>
+              <button>10</button>
+              <button>&gt;</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Fees1;
-

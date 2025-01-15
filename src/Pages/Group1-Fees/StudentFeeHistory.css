@@ -9,38 +9,31 @@
   
   /* Table styles */
   .history-table {
+    border-collapse: collapse;
+
     margin-top: 30px;
     width: 100%;
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 30px 0 30px 0;
+    border-radius: 0px 0 0px 0;
     margin-bottom: 50px;
   }
 
   .history-table th {
     padding: 20px 20px 20px 20px;
     text-align: left;
-    border-radius: 30px 0 30px 0;
+    border-radius: 0px 0 0px 0;
   }
   
   .history-table td {
     padding: 20px 20px 20px 20px;
     text-align: left;
-    border-radius: 0 0 30px 0;
+    border-radius: 0 0 0px 0;
   }
   
   .history-table th {
-    background-color: #991d20;
-    font-weight: bold;
-  }
-  
-  .history-table tr:nth-child(even) {
     background-color: #f9f9f9;
-  }
-  
-  .history-table tr:hover {
-    background-color: #991d20;
-    color: aliceblue;
+    font-weight: bold;
   }
   
   .add-semester-form {
