@@ -26,9 +26,8 @@
   }
   
   .fee-table th {
-    background-color: #f4f4f4;
+    background-color: #991d20;
     font-weight: bold;
-    border-radius: 10px;
   }
   
   .fee-table tr:nth-child(even) {
