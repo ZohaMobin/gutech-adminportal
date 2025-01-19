@@ -1,10 +1,10 @@
 import React from 'react';
-import AnnouncementsPage from './pages/Announcement.js';
+import AnnouncementCreatePage from './pages/AnnouncementCreate';
 
 function App() {
   return (
     <div className="App">
-      <AnnouncementsPage /> 
+      <AnnouncementCreatePage />
     </div>
   );
 }
