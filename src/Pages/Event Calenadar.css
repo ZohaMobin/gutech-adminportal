@@ -2,7 +2,7 @@
 
 /* Change the color of the heading */
 .calendar-heading {
-    color: #991D20; /* Green color */
+    color: black; /* Green color */
     text-align: center;
     margin-bottom: 20px;
 }
