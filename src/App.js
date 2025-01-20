@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from "../src/Pages/Sidebar/sidebar/index";
-import Assignments from './Pages/assignments/assignments';
+import Sidebar from "../src/pages/Sidebar/sidebar/index";
+import Assignments from './pages/assignments/assignments';
 
-import Dashboard from './Pages/dashboard/dashboard';
-import { Topbar } from './Pages/topbar/topbar';
+import Dashboard from './pages/dashboard/dashboard';
+import { Topbar } from './pages/topbar/topbar';
 
 function App() {
   return (
