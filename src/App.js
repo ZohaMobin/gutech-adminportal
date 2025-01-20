@@ -7,7 +7,7 @@ function App() {
     <div className="App">
     <Router>
         <Routes>
-          <Route path="/admin" element={<AdminJobsPage />} />
+          <Route path="/jobs and bootcamps" element={<AdminJobsPage />} />
         </Routes>
     </Router>
     </div>
