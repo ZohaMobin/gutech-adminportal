@@ -1,16 +1,13 @@
 {
-  "name": "gutech-adminportal",
+  "name": "gutech-studentportal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
-    "package-name": "^0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "vitals": "^0.1.2",
-    "web": "^0.0.2",
-    "web-vitals": "^4.2.4"
+    "react-router-dom": "^7.1.3",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
