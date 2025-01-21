@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
       <Route path="/student-fee-history/:name" element={<StudentFeeHistory />} />        <Route path="/feeVoucher" element={<FeeVoucher/>}/>
-        <Route path="/feeRecord" element={<Fees1/>}/>
+      <Route path="/" element={<Fees1/>}/>
       </Routes>
     </Router>
   );

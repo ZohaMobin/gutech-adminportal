@@ -3,6 +3,38 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Fees1.css";
 
 const Fees1 = () => {
+  // Array of students
+  const students = [
+    {
+      rollNo: "0906",
+      name: "Ibraheem",
+      program: "BS CS",
+      batch: "Fall-24",
+      semester: "3rd",
+      dueDate: "July 1, 2025",
+      status: "paid",
+    },
+    {
+      rollNo: "0907",
+      name: "Moosa",
+      program: "BS CS",
+      batch: "Fall-24",
+      semester: "3rd",
+      dueDate: "July 1, 2025",
+      status: "paid",
+    },
+    {
+      rollNo: "0908",
+      name: "Sultan",
+      program: "BS CS",
+      batch: "Fall-24",
+      semester: "3rd",
+      dueDate: "July 1, 2025",
+      status: "paid",
+    },
+  ];
+  
+
   return (
     <div className="fees-container">
       <header className="fees-header">
@@ -16,7 +48,9 @@ const Fees1 = () => {
         <button>Select Program</button>
         <button>Select Batch</button>
         <button>Select Semester</button>
-        <button className="add-voucher-btn">Add Voucher</button>
+        <button className="add-voucher-btn">
+          <Link to={`/feeVoucher`}>Add Voucher</Link>
+        </button>
       </div>
 
       <div className="fees-table-container">
@@ -34,54 +68,27 @@ const Fees1 = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>0906</td>
-              <td>
-                <Link to={`/student-fee-history/Ibraheem`}>Ibraheem</Link>
-              </td>
-              <td>BS CS</td>
-              <td>Fall-24</td>
-              <td>3rd</td>
-              <td>July 1, 2025</td>
-              <td>
-                <span className="status-paid">● Paid</span>
-              </td>
-              <td>
-                <button className="view-btn">View</button>
-              </td>
-            </tr>
-            <tr>
-              <td>0906</td>
-              <td>
-                <Link to={`/student-fee-history/Moosa`}>Moosa</Link>
-              </td>
-              <td>BS CS</td>
-              <td>Fall-24</td>
-              <td>3rd</td>
-              <td>July 1, 2025</td>
-              <td>
-                <span className="status-paid">● Paid</span>
-              </td>
-              <td>
-                <button className="view-btn">View</button>
-              </td>
-            </tr>
-            <tr>
-              <td>0906</td>
-              <td>
-                <Link to={`/student-fee-history/Sultan`}>Sultan</Link>
-              </td>
-              <td>BS CS</td>
-              <td>Fall-24</td>
-              <td>3rd</td>
-              <td>July 1, 2025</td>
-              <td>
-                <span className="status-paid">● Paid</span>
-              </td>
-              <td>
-                <button className="view-btn">View</button>
-              </td>
-            </tr>
+            {/* Dynamically generate student rows */}
+            {students.map((student) => (
+              <tr key={student.rollNo}>
+                <td>{student.rollNo}</td>
+                <td>
+                  {student.name}
+                </td>
+                <td>{student.program}</td>
+                <td>{student.batch}</td>
+                <td>{student.semester}</td>
+                <td>{student.dueDate}</td>
+                <td>
+                  <span className={`status-${student.status}`}>
+                    ● {student.status.charAt(0).toUpperCase() + student.status.slice(1)}
+                  </span>
+                </td>
+                <td>
+                  <button className="view-btn"><Link to={`/student-fee-history/${student.name}`}>View</Link></button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
