@@ -1,179 +1,198 @@
 /* General Styling */
 .exam-schedule {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    border: 2px solid #991D20;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    color: #323232;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Header Styling */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid #991D20;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  color: #323232;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #991D20;
+  padding-bottom: 10px;
+}
+
+.header h1 {
+  color: #991D20;
+  font-size: 28px;
+  margin: 0;
+}
+
+.exam-title-input {
+  font-size: 24px;
+  font-weight: bold;
+  color: #991D20;
+  border: 1px solid #991D20;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.exam-title-input:focus {
+  outline: none;
+  border-color: #6b0000;
+}
+
+.publish-button,
+.edit-button {
+  background-color: #991D20;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.publish-button:hover,
+.edit-button:hover {
+  background-color: #BB2328;
+}
+
+/* Schedule Table */
+.schedule-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.day-row {
+  display: table-row;
+  vertical-align: middle;
+}
+
+.day-cell,
+.slot-cell {
+  display: table-cell;
+  border: 1px solid #323232;
+  text-align: center;
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.day-cell {
+  background-color: #F7F7F7;
+  font-weight: bold;
+  font-size: 16px;
+  color: #991D20;
+  position: relative;
+}
+
+.day-date {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.delete-button {
+  background-color: #FF5555;
+  color: #FFFFFF;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #CC4444;
+}
+
+/* Slot Cell Styling */
+.slot-cell {
+  min-height: 60px;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.slot-cell input {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.slot-cell input:focus {
+  outline: none;
+  border-color: #991D20;
+}
+
+/* Filled Slot Styling */
+.slot-cell.filled {
+  background-color: #FFE6E6;
+  border-left: 4px solid #991D20;
+}
+
+/* Forms for Adding or Editing Slots */
+.add-day-form {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #991D20;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+}
+
+.add-day-form h3 {
+  margin-bottom: 15px;
+  color: #991D20;
+}
+
+.add-day-form .date-picker {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.add-day-form button {
+  background-color: #991D20;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-day-form button:hover {
+  background-color: #BB2328;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #991D20;
-    padding-bottom: 10px;
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .header h1,
-  .header h2 {
-    color: #991D20;
-    margin: 0;
-    font-size: 28px;
-  }
-  
-  .month-display {
-    font-size: 20px;
-    font-weight: bold;
-    color: #991D20;
-  }
-  
-  /* Schedule Table */
-  .schedule-table {
-    display: table;
+
+  .exam-title-input {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  
-  .time-row,
-  .day-row {
-    display: table-row;
-    vertical-align: middle;
-  }
-  
-  .time-cell,
+
   .day-cell,
   .slot-cell {
-    display: table-cell;
-    border: 1px solid #323232;
-    text-align: center;
-    padding: 15px;
-    vertical-align: middle;
-  }
-  
-  /* Time Row and Day Cell Styling */
-  .time-cell {
-    background-color: #F7F7F7;
-    font-weight: bold;
-    font-size: 16px;
-    color: #991D20;
-  }
-  
-  .day-cell {
-    background-color: #F7F7F7;
-    font-weight: bold;
-    font-size: 16px;
-    color: #991D20;
-    position: relative;
-  }
-  
-  .day-cell .day-date {
-    display: block;
-    font-size: 14px;
-    color: #555;
-    margin-top: 5px;
-  }
-  
-  /* Slot Cell Styling */
-  .slot-cell {
-    min-height: 60px;
-    word-wrap: break-word;
-    font-size: 14px;
-  }
-  
-  /* Filled Slot Styling */
-  .slot-cell.filled {
-    background-color: #FFE6E6;
-    border-left: 4px solid #991D20;
-  }
-  
-  /* Forms for Adding or Editing Slots */
-  .add-day-form,
-  .add-slots-form {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #991D20;
-    border-radius: 5px;
-    background-color: #F9F9F9;
-  }
-  
-  .add-day-form h3,
-  .add-slots-form h4 {
-    margin-bottom: 15px;
-    color: #991D20;
-  }
-  
-  .add-day-form input,
-  .add-slots-form input {
-    width: calc(33.33% - 10px);
+    font-size: 12px;
     padding: 10px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #CCCCCC;
-    border-radius: 5px;
-    font-size: 14px;
   }
-  
-  .add-slots-form .new-slot {
-    display: flex;
-    gap: 10px;
+
+  .slot-cell input {
+    font-size: 12px;
   }
-  
-  button {
-    background-color: #991D20;
-    color: #FFFFFF;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #BB2328;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .header h1,
-    .header h2,
-    .month-display {
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-  
-    .time-cell,
-    .day-cell,
-    .slot-cell {
-      font-size: 12px;
-      padding: 10px;
-    }
-  
-    .slot-cell {
-      min-height: 60px;
-    }
-  
-    .add-day-form input,
-    .add-slots-form input {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  
-    .add-slots-form .new-slot {
-      flex-direction: column;
-      gap: 5px;
-    }
-  }
-  
+}
