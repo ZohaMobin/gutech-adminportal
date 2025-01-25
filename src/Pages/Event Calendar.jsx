@@ -2,66 +2,135 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './Event Calenadar.css'; // Importing the CSS file
+import './Event Calenadar.css';
 
 const localizer = momentLocalizer(moment);
 
-function CalendarComponent() {
-  const [myEvents, setEvents] = useState([]);  // State for events
-  const [isToastOpen, setToastOpen] = useState(false);  // State for toast visibility
-  const [toastText, setToastText] = useState('');  // State for the toast message
+function AdminEventCalendar() {
+  const [myEvents, setEvents] = useState([]);
+  const [newEvent, setNewEvent] = useState({
+    title: '',
+    start: '',
+    end: '',
+    color: '#991D20', // Default color
+  });
+  const [isModalOpen, setModalOpen] = useState(false);
 
-  const handleToastClose = useCallback(() => {
-    setToastOpen(false);  // Close the toast when invoked
+  const handleEventAdd = () => {
+    if (newEvent.title && newEvent.start && newEvent.end) {
+      setEvents([
+        ...myEvents,
+        { 
+          ...newEvent, 
+          start: new Date(newEvent.start), 
+          end: new Date(newEvent.end) 
+        }
+      ]);
+      setNewEvent({ title: '', start: '', end: '', color: '#991D20' });
+      setModalOpen(false);
+    } else {
+      alert('Please fill in all fields');
+    }
+  };
+
+  const handleModalClose = useCallback(() => {
+    setModalOpen(false);
+    setNewEvent({ title: '', start: '', end: '', color: '#991D20' });
   }, []);
 
-  const handleEventClick = useCallback((event) => {
-    setToastText(event.title);  // Set the toast message to the event title
-    setToastOpen(true);         // Open the toast
-  }, []);
-
-  // Fetch events for the calendar (could be from an API, or hardcoded events)
   useEffect(() => {
-    const fetchedEvents = [
+    const initialEvents = [
       {
         title: 'Sample Event 1',
-        start: new Date(2025, 0, 15, 10, 0), // January 15, 2025, 10:00 AM
-        end: new Date(2025, 0, 15, 11, 0),   // January 15, 2025, 11:00 AM
+        start: new Date(2025, 0, 15, 10, 0),
+        end: new Date(2025, 0, 15, 11, 0),
+        color: '#991D20',
       },
       {
         title: 'Sample Event 2',
-        start: new Date(2025, 0, 16, 12, 0), // January 16, 2025, 12:00 PM
-        end: new Date(2025, 0, 16, 13, 0),   // January 16, 2025, 1:00 PM
+        start: new Date(2025, 0, 16, 12, 0),
+        end: new Date(2025, 0, 16, 13, 0),
+        color: '#007BFF',
       },
     ];
-
-    // Set fetched events to state
-    setEvents(fetchedEvents);
+    setEvents(initialEvents);
   }, []);
 
   return (
-    <div>
-      <h2 className="calendar-heading">GU TECH EVENT CALENDAR</h2>
+    <div className="admin-calendar-container">
+      <h2 className="calendar-heading"> Event Calendar</h2>
+
+      <button className="add-event-button" onClick={() => setModalOpen(true)}>
+        Add Event
+      </button>
 
       <Calendar
         localizer={localizer}
-        events={myEvents}        // The event data
-        startAccessor="start"    // Start date of the event
-        endAccessor="end"        // End date of the event
-        style={{ height: 500 }}   // Calendar height
-        onSelectEvent={handleEventClick}  // Event click handler
-        views={['month', 'week', 'day']}  // Views available (month, week, day)
+        events={myEvents}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: 600 }}
+        views={['month', 'week', 'day']}
+        selectable
+        eventPropGetter={(event) => ({
+          style: {
+            backgroundColor: event.color,
+            color: 'white',
+            borderRadius: '5px',
+            padding: '5px',
+          },
+        })}
       />
 
-      {/* Toast Message (Simple Alert for now) */}
-      {isToastOpen && (
-        <div className="toast">
-          <p>{toastText}</p>
-          <button onClick={handleToastClose}>Close</button>
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h3>Add New Event</h3>
+            <label>
+              Title:
+              <input
+                type="text"
+                value={newEvent.title}
+                onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+              />
+            </label>
+            <label>
+              Start:
+              <input
+                type="datetime-local"
+                value={newEvent.start}
+                onChange={(e) => setNewEvent({ ...newEvent, start: e.target.value })}
+              />
+            </label>
+            <label>
+              End:
+              <input
+                type="datetime-local"
+                value={newEvent.end}
+                onChange={(e) => setNewEvent({ ...newEvent, end: e.target.value })}
+              />
+            </label>
+            <label>
+              Event Color:
+              <input
+                type="color"
+                value={newEvent.color}
+                onChange={(e) => setNewEvent({ ...newEvent, color: e.target.value })}
+              />
+            </label>
+            <div className="modal-actions">
+              <button className="save-button" onClick={handleEventAdd}>
+                Save
+              </button>
+              <button className="cancel-button" onClick={handleModalClose}>
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-export default CalendarComponent;
+export default AdminEventCalendar;
