@@ -2,6 +2,7 @@
 
 
 
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -10,10 +11,15 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isDropdown1Open, setIsDropdown1Open] = useState(false);
   const [isDropdown2Open, setIsDropdown2Open] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false); 
 
-  // Toggle functions
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+
+    if (window.innerWidth < 1000) {
+      document.body.style.overflow = isCollapsed ? "auto" : "hidden";
+    }
   };
 
   const toggleDropdown1 = () => {
@@ -24,55 +30,78 @@ const Sidebar = () => {
     setIsDropdown2Open(!isDropdown2Open);
   };
 
-  // Automatically collapse sidebar when screen size is below 1000px
+  const toggleMobileSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible); 
+  };
+
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1000) {
-        setIsCollapsed(true);
+      if (window.innerWidth <= 900) {
+        setIsMobile(true);
       } else {
-        setIsCollapsed(false);
+        setIsMobile(false); 
+        setIsSidebarVisible(false); 
       }
     };
 
-    // Initial check
     handleResize();
-
-    // Add resize event listener
     window.addEventListener("resize", handleResize);
 
-    // Cleanup on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-      <div className="sidebar-header">
+    <>
+
+      {isMobile && (
         <img
-          className={`logo ${isCollapsed ? "collapsed-logo" : ""}`}
-          src="./gulogo.svg"
-          alt="Logo"
-        />
-        <img
-          onClick={toggleSidebar}
-          className={`toggle-btn ${isCollapsed ? "collapsed-toggle" : ""}`}
+          onClick={toggleMobileSidebar}
+          className=" toggleBtn"
           src="/Slider.svg"
           alt="Toggle Sidebar"
+          style={{ position: "fixed", top: "10px", left: "10px", zIndex: 1000 }}
         />
-      </div>
+      )}
 
-      <ul className="nav-links">
-        <Link to="/" className="sideBar-link">
-          <li>
-            <img
-              src="/dashboard-inactive.svg"
-              alt="Dashboard Icon"
-              className="icon"
-            />
-            {!isCollapsed && "Dashboard"}
-          </li>
-        </Link>
 
-        <Link to="/assignments" className="sideBar-link">
+      <div
+        className={`sidebar ${isCollapsed ? "collapsed" : ""} ${
+          isMobile && !isSidebarVisible ? "hidden" : ""
+        }`}
+        style={
+          isMobile && isSidebarVisible
+            ? { position: "fixed", top: 0.5, left: -8, zIndex: 999 }
+            : {}
+        }
+      >
+        <div className="sidebar-header">
+          <img
+            className={`logo ${isCollapsed ? "collapsed-logo" : ""}`}
+            src="./gulogo.svg"
+            alt="Logo"
+          />
+          <img
+            onClick={toggleSidebar}
+            className={`toggle-btn ${isCollapsed ? "" : "hidden"}`}
+            src="/Slider.svg"
+            alt="Toggle Sidebar"
+          />
+        </div>
+
+        <ul className="nav-links">
+          <Link to="/" className="sideBar-link">
+            <li>
+              <img
+                src="/dashboard-inactive.svg"
+                alt="Dashboard Icon"
+                className="icon"
+              />
+              {!isCollapsed && "Dashboard"}
+            </li>
+          </Link>
+
+
+          <Link to="/assignments" className="sideBar-link">
           <li>
             <img
               src="/clipboard-inactive.svg"
@@ -270,22 +299,10 @@ const Sidebar = () => {
 
 
 
-
-
-
-
-
-
-
-
-      </ul>
-    </div>
+        </ul>
+      </div>
+    </>
   );
 };
 
 export default Sidebar;
-
-
-
-
-
