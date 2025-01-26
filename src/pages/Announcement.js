@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Search, Plus, Bell } from 'lucide-react';
+import Modal from './Modal'; // Import the Modal component
+import AnnouncementCreatePage from './AnnouncementCreate'; // Import the Create Announcement component
 import './Announcement.css';
 
 const AnnouncementsPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+
   const announcements = [
     { id: 1, title: 'EVENT LLC', content: 'We are seeking a results-driven Product Manager...', author: 'Sir Aleem', date: 'Jan 11', time: '12pm-6pm' },
     { id: 2, title: 'Quiz Tomorrow', content: 'We are seeking a results-driven Product Manager...', author: 'Sir Twaha', date: 'Jan 11', time: '12pm-6pm' },
     { id: 3, title: 'EVENT LLC', content: 'We are seeking a results-driven Product Manager...', author: 'Sir Aleem', date: 'Jan 11', time: '12pm-6pm' },
     { id: 4, title: 'Quiz Tomorrow', content: 'We are seeking a results-driven Product Manager...', author: 'Sir Aleem', date: 'Jan 11', time: '12pm-6pm' },
   ];
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="min-h-screen bg-white">
@@ -41,7 +48,10 @@ const AnnouncementsPage = () => {
                 <input type="text" placeholder="Search" className="pl-10 pr-4 py-2 border rounded-md bg-gray-200" />
                 <Search className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" />
               </div>
-              <button className="flex items-center space-x-2 px-4 py-2 bg-orange-500 text-white rounded-md">
+              <button
+                className="flex items-center space-x-2 px-4 py-2 bg-orange-500 text-white rounded-md"
+                onClick={openModal} // Open the modal on button click
+              >
                 <Plus className="w-5 h-5" />
                 <span>Announcements</span>
               </button>
@@ -69,11 +79,13 @@ const AnnouncementsPage = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal for Create Announcement */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <AnnouncementCreatePage onClose={closeModal} /> {/* Pass closeModal as a prop */}
+      </Modal>
     </div>
   );
 };
 
 export default AnnouncementsPage;
-
-
-

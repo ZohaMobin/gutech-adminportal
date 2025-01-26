@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './AnnouncementCreate.css';
 
-const AnnouncementCreatePage = () => {
+const AnnouncementCreatePage = ({ onClose }) => { // Accept onClose as a prop
     const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [audience, setAudience] = useState({
@@ -89,7 +89,7 @@ const AnnouncementCreatePage = () => {
                     </div>
 
                     <div className="form-buttons">
-                        <button type="button" className="cancel-button">Cancel</button>
+                        <button type="button" className="cancel-button" onClick={onClose}>Cancel</button> {/* Call onClose on cancel */}
                         <button type="submit" className="submit-button">Create Announcement</button>
                     </div>
                 </form>
