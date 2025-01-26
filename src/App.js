@@ -4,7 +4,7 @@ import Sidebar from "./pages/Sidebar/sidebar/index";
 import Assignments from "./pages/assignments/assignments";
 import Dashboard from './pages/dashboard/dashboard';
 import { Topbar } from "./pages/topbar/topbar";
-import AnnouncementsPage from './pages/Announcement';
+
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Topbar />
           <div className="routes-content" >
           <Routes >
-          <Route path='/Announcement' element={<AnnouncementsPage />} />
+  
           <Route path="/" element={<Dashboard />} />
           <Route path="/assignments" element={<Assignments/>} />
 
@@ -28,4 +28,5 @@ function App() {
 }
 
 export default App;
+
 
