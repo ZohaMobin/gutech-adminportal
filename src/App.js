@@ -1,7 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Sidebar from "../src/Pages/Sidebar/sidebar/index";
 import Assignments from './Pages/assignments/assignments';
+import AdminEventCalendar from './Pages/Event Calendar/Event Calendar';
 
 import Dashboard from './Pages/dashboard/dashboard';
 import { Topbar } from './Pages/topbar/topbar';
@@ -18,6 +20,7 @@ function App() {
 
           <Route path="/" element={<Dashboard/>} /> 
           <Route path="/assignments" element={<Assignments />} />
+          <Route path="/calendar" element={<AdminEventCalendar />}></Route>
       
         </Routes>
         </div>
