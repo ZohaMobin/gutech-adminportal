@@ -13,7 +13,7 @@ function App() {
         <Sidebar />
         <div className='mainContent '>
           <Topbar />
-          <div className="routes-content" >
+          <div className="routes-content" > 
           <Routes >
           <Route path='/Announcement' element={<AnnouncementsPage />} />
           <Route path="/" element={<Dashboard />} />
