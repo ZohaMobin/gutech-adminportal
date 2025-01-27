@@ -1,15 +1,23 @@
 {
-  "name": "gutech-adminportal",
+  "name": "gutech-studentportal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+<<<<<<< HEAD
     "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-big-calendar": "^1.17.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^4.2.4"
+=======
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.3",
+    "react-router-dom": "^7.1.3",
+    "react-scripts": "5.0.1"
+>>>>>>> 6ef72defd425f2c5af1d32f11a8a849e47e4c8e4
   },
   "scripts": {
     "start": "react-scripts start",
