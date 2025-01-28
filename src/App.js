@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import TranscriptView from './Pages/ViewTranscript';
-import ViewTranscript from './Pages/ViewTranscript.jsx'
-import './Pages/ViewTransript.css'
+import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <div>
-     <TranscriptView />
-     <ViewTranscript />
+      
+     <BrowserRouter>
+      <TranscriptView />
+     </BrowserRouter>
     </div>
   );
 }
