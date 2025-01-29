@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminJobsPage from "./Pages/JobsAndBootcamps";
-import './Pages/JobsndBootcamps.css';
+import AdminJobsPage from "./Pages/JobsAndBootcamps/JobsAndBootcamps";
 function App() {
   return (
     <div className="App">
