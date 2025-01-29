@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Sidebar from "./pages/Sidebar/sidebar/index";
-import Assignments from './pages/assignments/assignments';
-import AdminEventCalendar from './pages/Event Calendar/Event Calendar';
+import Sidebar from "./Pages/Sidebar/sidebar/index";
+import Assignments from './Pages/assignments/assignments';
+import AdminEventCalendar from './Pages/Event Calendar/Event Calendar';
 
-import Dashboard from './pages/dashboard/dashboard';
-import { Topbar } from './pages/topbar/topbar';
+import Dashboard from './Pages/dashboard/dashboard';
+import { Topbar } from './Pages/topbar/topbar';
 
 function App() {
   return (
