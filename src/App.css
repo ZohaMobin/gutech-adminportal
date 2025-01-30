@@ -5,19 +5,30 @@
   font-weight: 400;
   font-style: normal;
 
+
   display: flex;
+
+
 
 }
 
+
+
+.routes-content{
+
+  padding: 2%;
+}
+
+
+.content{
+  padding :2% ; 
+}
 
 
 .mainContent {
   width: 80%;
 }
-.routes-content{
 
-  padding: 2%;
-}
 
 @media (max-width: 900px) {
   .mainContent {
@@ -26,7 +37,6 @@
 
  
 }
-.content{
-  padding :2% ; 
-}
+
+
 
