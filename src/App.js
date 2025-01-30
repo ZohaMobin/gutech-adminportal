@@ -24,8 +24,7 @@ function App() {
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/calendar" element={<AdminEventCalendar />}/>
           <Route path="/Announcement" element={<Announcement/>} /> 
-         
-        <Route path="/job-opportunities" element={<AdminJobsPage />} />
+          <Route path="/job-opportunities" element={<AdminJobsPage />} />
         </Routes>
         </div>
     </div>
