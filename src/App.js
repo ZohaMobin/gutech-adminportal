@@ -8,6 +8,9 @@ import AdminEventCalendar from './Pages/Event Calendar/Event Calendar';
 import Dashboard from './Pages/dashboard/dashboard';
 import { Topbar } from './Pages/topbar/topbar';
 
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AdminJobsPage from "./Pages/JobsAndBootcamps/JobsAndBootcamps";
 function App() {
   return (
     <Router>
@@ -21,15 +24,14 @@ function App() {
           <Route path="/" element={<Dashboard/>} /> 
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/calendar" element={<AdminEventCalendar />}></Route>
-      
+          <Route path="/job-opportunities" element={<AdminJobsPage />} />
         </Routes>
         </div>
-        </div>
-      </div>
+    </div>
+    </div>
     </Router>
   );
-}
-
+};
 export default App;
 
 
