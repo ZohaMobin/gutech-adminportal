@@ -29,9 +29,9 @@ const AdminJobsPage = () => {
     };
 
     if (formType === "job") {
-      setJobs([...jobs, newEntry]); // Add to jobs section
+      setJobs([...jobs, newEntry]); // POST a job opportunity//
     } else if (formType === "bootcamp") {
-      setBootcamps([...bootcamps, newEntry]); // Add to bootcamps section
+      setBootcamps([...bootcamps, newEntry]); // POST a bootcamp//
     }
 
     setShowForm(false);
@@ -39,7 +39,7 @@ const AdminJobsPage = () => {
     event.target.reset();
   };
 
-  const [applications, setApplications] = useState([
+  const [applications, setApplications] = useState([ //GET bootcamp applications from the appliers//
     {
       name: "Ali Khan",
       email: "alikhan@example.com",
