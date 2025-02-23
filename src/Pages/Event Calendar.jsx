@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
-import axios from 'axios';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import './Event Calenadar.css';
@@ -16,27 +15,6 @@ function AdminEventCalendar() {
     color: '#991D20',
   });
   const [isModalOpen, setModalOpen] = useState(false);
-  const [error, setError] = useState(null);
-
-  const BASE_URL = 'https://student-portal-backend-sgik.onrender.com/api/calendar/admin/event'; 
-
-  useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    
-    if (!token) return;
-    axios.get(`${BASE_URL}`, {
-      headers: { Authorization: `Bearer YOUR_AUTH_TOKEN` }
-    })
-    .then(response => {
-      setEvents(response.data.map(event => ({
-        title: event.title,
-        start: new Date(event.start),
-        end: new Date(event.end),
-        color: event.color || '#991D20'
-      })));
-    })
-    .catch(error => setError(error.message));
-  }, []);
 
   const handleEventAdd = () => {
     if (!newEvent.title || !newEvent.start || !newEvent.end) {
@@ -46,28 +24,15 @@ function AdminEventCalendar() {
 
     const eventToAdd = {
       title: newEvent.title,
-      start: new Date(newEvent.start).toISOString(),
-      end: new Date(newEvent.end).toISOString(),
-      color: newEvent.color
+      start: new Date(newEvent.start),
+      end: new Date(newEvent.end),
+      color: newEvent.color,
     };
 
-    axios.post(`${BASE_URL}/admin/event`, eventToAdd, {
-      headers: { Authorization: `Bearer YOUR_AUTH_TOKEN` }
-    })
-    .then(() => {
-      setEvents([...myEvents, { ...eventToAdd, start: new Date(eventToAdd.start), end: new Date(eventToAdd.end) }]);
-      setModalOpen(false);
-      setNewEvent({ title: '', start: '', end: '', color: '#991D20' });
-    })
-    .catch(error => setError(error.message));
-  };
-
-  const handleModalClose = useCallback(() => {
+    setEvents([...myEvents, eventToAdd]);
     setModalOpen(false);
     setNewEvent({ title: '', start: '', end: '', color: '#991D20' });
-  }, []);
-
-  if (error) return <p>Error: {error}</p>;
+  };
 
   return (
     <div className="admin-calendar-container">
@@ -135,7 +100,7 @@ function AdminEventCalendar() {
               <button className="save-button" onClick={handleEventAdd}>
                 Save
               </button>
-              <button className="cancel-button" onClick={handleModalClose}>
+              <button className="cancel-button" onClick={() => setModalOpen(false)}>
                 Cancel
               </button>
             </div>
