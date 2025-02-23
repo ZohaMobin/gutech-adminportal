@@ -262,7 +262,7 @@ const Sidebar = () => {
                    {isCollapsed ? "" : "Transcript"}
                  </li>
                </Link>
-               <Link to="/job-opportunities" className="sideBar-link">
+               <Link to="/JobsAndBootcamps" className="sideBar-link">
                  <li>
                    <img
                      src="/note-inactive.svg"

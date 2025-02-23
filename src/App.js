@@ -6,6 +6,7 @@ import TranscriptView from './Pages/ViewTranscript';
 import Fees1 from "./Pages/Group1-Fees/Fees1";
 import StudentFeeHistory from "./Pages/Group1-Fees/StudentFeeHistory";
 import FeeVoucher from "./Pages/Group1-Fees/FeeVoucher";
+import AdminJobsPage from "./Pages/JobsAndBootcamps/JobsAndBootcamps";
 import "./App.css";
 
 import Sidebar from "../src/Pages/Sidebar/sidebar/index";
@@ -36,7 +37,7 @@ function App() {
               <Route
                 path="/student-fee-history/:name"
                 element={<StudentFeeHistory />}
-              />
+              /> <Route path="/JobsAndBootcamps" element={<AdminJobsPage />} />
               <Route path="/FeeVoucher" element={<FeeVoucher />} />
               <Route path="/Transcript" element={  <TranscriptView />} />
             
@@ -47,6 +48,7 @@ function App() {
     </Router>
   )}
  
+
 
 
 export default App;
