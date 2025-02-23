@@ -1,11 +1,12 @@
 
 import React from 'react';
-import CalendarComponent from './Pages/Event Calendar.jsx';  // Import CalendarComponent
+import ClassSchedule from './Pages/Class Schedule/Class Schedule.jsx';
 
 function App() {
   return (
     <div className="App">
-      <CalendarComponent />  {/* Render the CalendarComponent */}
+     
+      <ClassSchedule /> 
     </div>
   );
 }
