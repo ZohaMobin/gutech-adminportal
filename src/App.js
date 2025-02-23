@@ -1,6 +1,8 @@
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import TranscriptView from './Pages/ViewTranscript';
+// import { BrowserRouter } from 'react-router-dom';
 import Fees1 from "./Pages/Group1-Fees/Fees1";
 import StudentFeeHistory from "./Pages/Group1-Fees/StudentFeeHistory";
 import FeeVoucher from "./Pages/Group1-Fees/FeeVoucher";
@@ -36,12 +38,15 @@ function App() {
                 element={<StudentFeeHistory />}
               />
               <Route path="/FeeVoucher" element={<FeeVoucher />} />
+              <Route path="/Transcript" element={  <TranscriptView />} />
+            
             </Routes>
           </div>
         </div>
       </div>
     </Router>
-  );
-}
+  )}
+ 
+
 
 export default App;
