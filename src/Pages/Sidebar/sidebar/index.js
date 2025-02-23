@@ -126,8 +126,8 @@ const Sidebar = () => {
               <Link to="/Class Schedule" className="sideBar-link">
                 <li>{!isCollapsed ? "Schedules" : "Schedule"}</li>
               </Link>
-              <Link to="/timetable" className="sideBar-link">
-                <li>{!isCollapsed ? "Timetable" : "Time"}</li>
+              <Link to="/Examschedule" className="sideBar-link">
+                <li>{!isCollapsed ? "ExamsSchedule" : "ExamsSch"}</li>
               </Link>
               <Link to="/calendar" className="sideBar-link">
                 <li>{!isCollapsed ? "Event Calendar" : "Calendar"}</li>

@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TranscriptView from './Pages/ViewTranscript';
 // import { BrowserRouter } from 'react-router-dom';
+import Examschedule from './Components/ExamSchedule/Examschedule';
+
 import Fees1 from "./Pages/Group1-Fees/Fees1";
 import StudentFeeHistory from "./Pages/Group1-Fees/StudentFeeHistory";
 import FeeVoucher from "./Pages/Group1-Fees/FeeVoucher";
@@ -40,7 +42,9 @@ function App() {
               /> <Route path="/JobsAndBootcamps" element={<AdminJobsPage />} />
               <Route path="/FeeVoucher" element={<FeeVoucher />} />
               <Route path="/Transcript" element={  <TranscriptView />} />
-            
+              <Route path="/Examschedule" element={           <Examschedule />} />
+
+           
             </Routes>
           </div>
         </div>
@@ -49,6 +53,9 @@ function App() {
   )}
  
 
+
+
+// import './Components/ExamSchedule/Examschedule.css';
 
 
 export default App;
