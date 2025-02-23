@@ -123,7 +123,7 @@ const Sidebar = () => {
           </div>
           {isDropdown1Open && (
             <ul className="dropdown-menu">
-              <Link to="/schedules" className="sideBar-link">
+              <Link to="/Class Schedule" className="sideBar-link">
                 <li>{!isCollapsed ? "Schedules" : "Schedule"}</li>
               </Link>
               <Link to="/timetable" className="sideBar-link">
