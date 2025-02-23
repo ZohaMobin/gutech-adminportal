@@ -16,7 +16,7 @@ function App() {
           <div className="routes-content" > 
           <Routes >
           <Route path='/Announcement' element={<AnnouncementsPage />} />
-          <Route path="/" element={<Dashboard />} />
+          {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/assignments" element={<Assignments/>} />
 
         </Routes>
