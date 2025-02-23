@@ -13,11 +13,19 @@ import "./App.css";
 
 import Sidebar from "../src/Pages/Sidebar/sidebar/index";
 
+
 import AdminEventCalendar from "./Pages/Event Calendar/Event Calendar";
 import Announcement from "./Pages/Announcements/Announcement";
 import Dashboard from "./Pages/dashboard/Dashboard.jsx";
 import ClassSchedule from "./Pages/Class Schedule/Class Schedule.jsx";
 import { Topbar } from "./Pages/topbar/topbar";
+
+import Assignments from './Pages/assignments/assignments';
+import AdminEventCalendar from './Pages/Event Calendar/Event Calendar';
+import Attendance from './Pages/Attendance/Attendance';
+import Dashboard from './Pages/dashboard/dashboard';
+import { Topbar } from './Pages/topbar/topbar';
+
 
 function App() {
   return (
@@ -29,6 +37,7 @@ function App() {
           <div className="content">
             <Routes>
               <Route path="/" element={<Dashboard />} />
+
 
               <Route path="/calendar" element={<AdminEventCalendar />} />
               <Route path="/Announcement" element={<Announcement />} />
@@ -45,8 +54,13 @@ function App() {
               <Route path="/Examschedule" element={           <Examschedule />} />
 
            
-            </Routes>
-          </div>
+      
+         
+          <Route path="/Attendance" element={<Attendance />} />
+      
+        </Routes>
+        </div>
+
         </div>
       </div>
     </Router>
@@ -55,7 +69,7 @@ function App() {
 
 
 
-// import './Components/ExamSchedule/Examschedule.css';
+
 
 
 export default App;

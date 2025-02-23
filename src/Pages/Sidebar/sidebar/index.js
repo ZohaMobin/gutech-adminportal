@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -136,39 +137,20 @@ const Sidebar = () => {
           )}
         </li>
 
-
-        <Link to="/downloads" className="sideBar-link">
+        <Link to="/Attendance" className="sideBar-link">
            <li>
              <img
-               src="/downloads-inactive.svg"
-               alt="Downloads Icon"
+               src="/recordings-inactive.svg"
+               alt="Recordings Icon"
                className="icon"
              />
-             {!isCollapsed && "Downloads"}
+             {!isCollapsed && "Attendance"}
            </li>
          </Link>
+     
 
-         <Link to="/classes" className="sideBar-link">
-           <li>
-             <img
-               src="/classes-inactive.svg"
-               alt="Classes Icon"
-               className="icon-exlg "
-             />
-             {!isCollapsed && "Classes"}
-           </li>
-         </Link>
-
-         <Link to="/notes" className="sideBar-link">
-           <li>
-             <img
-               src="/resources-inactive.svg"
-               alt="Resources Icon"
-               className="icon "
-             />
-             {!isCollapsed && "Resources"}
-           </li>
-         </Link>
+         
+      
 
          <li className="moreOptions">
            <div className="dropdown-toggle " onClick={toggleDropdown2}>
@@ -201,14 +183,14 @@ const Sidebar = () => {
            )}
          </li>
 
-         <Link to="/notes" className="sideBar-link">
+         {/* <Link to="/notes" className="sideBar-link">
            <li>
              <img src="/note-inactive.svg" alt="Notes Icon" className="icon" />
              {!isCollapsed && "Notes"}
            </li>
-         </Link>
+         </Link> */}
 
-         <Link to="/recordings" className="sideBar-link">
+         {/* <Link to="/recordings" className="sideBar-link">
            <li>
              <img
                src="/recordings-inactive.svg"
@@ -217,7 +199,7 @@ const Sidebar = () => {
              />
              {!isCollapsed && "Recordings"}
            </li>
-         </Link>
+         </Link> */}
 
          <Link to="/courses" className="sideBar-link">
            <li>
@@ -230,7 +212,7 @@ const Sidebar = () => {
            </li>
          </Link>
 
-         <Link to="/discussions" className="sideBar-link">
+         {/* <Link to="/discussions" className="sideBar-link">
            <li>
              <img
                src="/discussions-inactive.svg"
@@ -239,7 +221,7 @@ const Sidebar = () => {
              />
              {!isCollapsed && "Discussions"}
            </li>
-         </Link>
+         </Link> */}
 
        
                <Link to="/Fees1" className="sideBar-link">
@@ -272,16 +254,7 @@ const Sidebar = () => {
                    {isCollapsed ? "" : "Job-Opportunities"}
                  </li>
                </Link>
-               <Link to="/settings" className="sideBar-link">
-                 <li>
-                   <img
-                     src="/settings-inactive.svg"
-                     alt="Settings Icon"
-                     className="icon icon-exlg "
-                   />
-                   {isCollapsed ? "" : "Settings"}
-                 </li>
-               </Link>
+             
 
 
 
@@ -297,3 +270,7 @@ const Sidebar = () => {
 
 
 export default Sidebar ; 
+
+
+
+
