@@ -20,11 +20,9 @@ import Dashboard from "./Pages/dashboard/Dashboard.jsx";
 import ClassSchedule from "./Pages/Class Schedule/Class Schedule.jsx";
 import { Topbar } from "./Pages/topbar/topbar";
 
-import Assignments from './Pages/assignments/assignments';
-import AdminEventCalendar from './Pages/Event Calendar/Event Calendar';
+
 import Attendance from './Pages/Attendance/Attendance';
-import Dashboard from './Pages/dashboard/dashboard';
-import { Topbar } from './Pages/topbar/topbar';
+
 
 
 function App() {
