@@ -14,7 +14,11 @@
   transition: background-color 0.3s;
   text-decoration: none;
 }
+.transcript-name{
 
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
 .view-transcript-btn:hover {
   background-color: var(--primary-hover);
 }

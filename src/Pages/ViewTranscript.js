@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Transcript.css";
-import axios from "axios"
+// import axios from "axios"
 
 const Transcript = () => {
   const studentData = {
-    name: "Muhammad Yousuf",
-    studentId: "BCS-010",
+    name: "Muhammad Waqas",
+    studentId: "BCS-023",
     dob: "09/21/2005",
     degree: "Bachelor of Computer Science",
     major: "Computer Science",
@@ -26,7 +26,7 @@ const Transcript = () => {
             code: "WEB102",
             title: "Web Tech",
             creditUnits: 3,
-            grade: "B",
+            grade: "A",
             points: 3,
           },
           {
@@ -78,17 +78,17 @@ const Transcript = () => {
 
   const [stdata, setstudentData] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get("mockapi/transcriptDATA")
-      .then((response) => {
-        setstudentData(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log("error fetching data", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("mockapi/transcriptDATA")
+  //     .then((response) => {
+  //       setstudentData(response.data);
+  //       console.log(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("error fetching data", error);
+  //     });
+  // }, []);
 
   //DESTRUCTURE EXAMPLE
   const { studentId } = studentData;
@@ -100,7 +100,7 @@ const Transcript = () => {
       </header>
 
       <div className="student-info">
-        <p>
+        <p className="transcript-name">
           <strong>Name:</strong> {studentData.name}
         </p>
         <p>
