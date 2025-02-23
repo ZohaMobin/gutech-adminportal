@@ -1,11 +1,11 @@
 import './App.css';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Sidebar from "./Pages/Sidebar/sidebar/index";
-import Assignments from './Pages/assignments/assignments';
 import AdminEventCalendar from './Pages/Event Calendar/Event Calendar';
 import Announcement from "./Pages/Announcements/Announcement";
-import Dashboard from './Pages/dashboard/dashboard';
+import Dashboard from './Pages/dashboard/Dashboard.jsx';
 import { Topbar } from './Pages/topbar/topbar';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Routes >
 
           <Route path="/" element={<Dashboard/>} /> 
-          <Route path="/assignments" element={<Assignments />} />
+  
           <Route path="/calendar" element={<AdminEventCalendar />}/>
           <Route path="/Announcement" element={<Announcement/>} /> 
          
@@ -29,6 +29,8 @@ function App() {
         </div>
       </div>
     </Router>
+
+
   );
 }
 
