@@ -16,7 +16,7 @@ import Sidebar from "../src/Pages/Sidebar/sidebar/index";
 
 import AdminEventCalendar from "./Pages/Event Calendar/Event Calendar";
 import Announcement from "./Pages/Announcements/Announcement";
-import Dashboard from "./Pages/dashboard/Dashboard.jsx";
+import Dashboard from "./Pages/Dashboard/Dashboard.jsx";
 import ClassSchedule from "./Pages/Class Schedule/Class Schedule.jsx";
 import { Topbar } from "./Pages/topbar/topbar";
 
