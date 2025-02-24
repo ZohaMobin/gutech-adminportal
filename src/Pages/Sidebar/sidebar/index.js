@@ -110,32 +110,41 @@ const Sidebar = () => {
           </li>
         </Link>
 
-        <li className="moreOptions">
-          <div className="dropdown-toggle" onClick={toggleDropdown1}>
-            <img
-              src="/calender-inactive.svg"
-              alt="Schedules Icon"
-              className="icon"
-            />
-            {!isCollapsed && "Schedules"}
-            <span className="dropdown-icon">
-              {isDropdown1Open ? "▲" : "▼"}
-            </span>
-          </div>
-          {isDropdown1Open && (
-            <ul className="dropdown-menu">
-              <Link to="/Class Schedule" className="sideBar-link">
-                <li>{!isCollapsed ? "Schedules" : "Schedule"}</li>
-              </Link>
-              <Link to="/Examschedule" className="sideBar-link">
-                <li>{!isCollapsed ? "ExamsSchedule" : "ExamsSch"}</li>
-              </Link>
-              <Link to="/calendar" className="sideBar-link">
-                <li>{!isCollapsed ? "Event Calendar" : "Calendar"}</li>
-              </Link>
-            </ul>
-          )}
-        </li>
+     
+        <Link to="/Class Schedule" className="sideBar-link">
+           <li>
+             <img
+               src="/calender-inactive.svg"
+               alt="Recordings Icon"
+               className="icon"
+             />
+             {!isCollapsed && "Schedule"}
+           </li>
+         </Link>
+
+
+        <Link to="/calendar" className="sideBar-link">
+           <li>
+             <img
+               src="/calender-inactive.svg"
+               alt="Recordings Icon"
+               className="icon"
+             />
+             {!isCollapsed && "Event Calendar"}
+           </li>
+         </Link>
+
+
+        <Link to="/Examschedule" className="sideBar-link">
+           <li>
+             <img
+               src="/calender-inactive.svg"
+               alt="Recordings Icon"
+               className="icon"
+             />
+             {!isCollapsed && "ExamsSchedule"}
+           </li>
+         </Link>
 
         <Link to="/Attendance" className="sideBar-link">
            <li>
