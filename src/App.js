@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TranscriptView from './Pages/ViewTranscript';
 // import { BrowserRouter } from 'react-router-dom';
 import Examschedule from './Components/ExamSchedule/Examschedule';
+import './Components/ExamSchedule/Examschedule.css';
 
 import Fees1 from "./Pages/Group1-Fees/Fees1";
 import StudentFeeHistory from "./Pages/Group1-Fees/StudentFeeHistory";
